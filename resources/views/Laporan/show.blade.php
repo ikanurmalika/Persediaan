@@ -134,10 +134,11 @@
                 <tr align="center">
                     <td></td>
                     <td colspan="2" align="center"><strong>Total </strong></td>
-                    <td>{{number_format( $totalAwal > 0 ? $totalAwal : '-') }}</td>
-                    <td>{{number_format ($totalMasuk > 0 ? $totalMasuk : '-' )}}</td>
-                    <td>{{number_format( $totalKeluar > 0 ? $totalKeluar : '-') }}</td>
-                    <td>{{ number_format($totalAkhir > 0 ? $totalAkhir : '-' )}}</td>
+                    <td colspan="2" align="center"><strong>Total </strong></td>
+                    <td>{{ $totalAwal > 0 ? number_format($totalAwal) : '-' }}</td>
+                    <td>{{ $totalMasuk > 0 ? number_format($totalMasuk) : '-' }}</td>
+                    <td>{{ $totalKeluar > 0 ? number_format($totalKeluar) : '-' }}</td>
+                    <td>{{ $totalAkhir > 0 ? number_format($totalAkhir) : '-' }}</td>
                 </tr>
             </tbody>
         </table>

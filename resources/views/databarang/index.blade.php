@@ -68,6 +68,52 @@
    {{ $data->links() }}
 </div>
 <!-- AKHIR DATA -->
+<style>
+    /* Additional CSS */
+@media (max-width: 767.98px) {
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .d-flex .form-control {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-sm {
+        margin-bottom: 0.5rem;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem;
+        border: 1px solid #dee2e6;
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+
+    .table tbody td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+}
+
+    </style>
 
 @endsection
       

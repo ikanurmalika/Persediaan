@@ -27,7 +27,11 @@
                 <div class="col-md-6" >Kota            : <span >   Bandung</span></div>
             </div>
             <div class="row p-2">
-                <div class="col-md-6" >Perangkat Daerah:  <span >Astana Anyar</span></div>
+                <div class="col-md-6" >Perangkat Daerah:  <span >{{ $perangkat_daerah }}</span></div>
+               
+            </div>
+            <div class="row p-2">
+                <div class="col-md-6" >Sumber Penerimaan:  <span >APBD</span></div>
                
             </div>
         

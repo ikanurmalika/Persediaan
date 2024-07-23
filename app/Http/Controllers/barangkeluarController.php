@@ -102,7 +102,7 @@ class barangkeluarController extends Controller
             $nomor_urut ="000001";
         }else {
             
-            $nomor_urut=intval(substr($barang->id_transaksi_keluar,1,4))+1;
+            $nomor_urut=intval(substr($barang->id_transaksi_keluar,1,6))+1;
             $nomor_urut=str_pad($nomor_urut,6,"0", STR_PAD_LEFT);
         }
         $idtransaksi= $barang_id. $nomor_urut;

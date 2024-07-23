@@ -36,8 +36,7 @@ class PrediksiStokController extends Controller
                                  ->orderBy('id_barang', 'desc')
                                  ->get();
 
-    // Hitung EOQ dan rata-rata untuk setiap item berdasarkan tahun
-    // Hitung EOQ dan rata-rata untuk setiap item berdasarkan tahun
+    // Hitung minmax stock
     foreach ($data as $index => $item) {
         // Mendapatkan data barang keluar untuk tahun sekarang
         $barang_keluar_tahun_ini = $barangkeluar->filter(function ($value) use ($item, $TahunIni) {
@@ -59,7 +58,7 @@ class PrediksiStokController extends Controller
             $ratarata_tahun_ini=round($jumlah_barang_tahun_ini/12);
             $SS_tahun_ini=round(($A_maks-$ratarata_tahun_ini)*$LT);
             $manimal_tahun_ini=($ratarata_tahun_ini*$LT)+$SS_tahun_ini;
-            $minimal_tahun_ini=2*($ratarata_tahun_ini*$LT)+$SS_tahun_ini;
+            $maksimal_tahun_ini=2*($ratarata_tahun_ini*$LT)+$SS_tahun_ini;
         }
 
         if ($barang_keluar_tahun_lalu->count() > 0) {
@@ -82,7 +81,7 @@ class PrediksiStokController extends Controller
             $item->A_maks2=$A_maks2;
         }
     }
-        // Kirim data ke view bersama dengan hasil EOQ
+        // Kirim data ke view 
         return view('PrediksiStok.new', compact('data', 'TahunIni', 'TahunLalu'));
     }
 

@@ -41,7 +41,7 @@
         <tbody>
             @foreach($barangmasuk as $index => $item)
             @php
-                $bmasuk= $item->jml_barang+ $barangkeluar[$index]->jml_barang;
+                $bmasuk= $item->jml_barang+ $item->jml_barang_awal;
                 $jmlKeluar = isset($barangkeluar[$index]) ? (int) $barangkeluar[$index]->jml_barang : 0;
                 $Sisa = $bmasuk - $jmlKeluar;
                 $totalMasuk += $bmasuk;

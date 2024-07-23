@@ -42,7 +42,12 @@
 
     </div>
     <div class="form-group">
-        <table class="static text-center" align="center" rules="all" border="1px" style="width: 100%;">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+        
+            <table class="static text-center" align="center" rules="all" border="1px" style="width: 100%;">
+        
             <thead>
                 <tr>
                     <th class="text-center" align="center" rowspan="3">No</th>

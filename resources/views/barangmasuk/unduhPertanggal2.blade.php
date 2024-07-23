@@ -11,6 +11,9 @@
             position: relative;
             border: 1px solid #543535;
         }
+        body {
+            font-size: 11px;
+        }
     </style>
     <title>Unduh Data Barang Masuk</title>
 </head>
