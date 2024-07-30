@@ -8,10 +8,8 @@
 <form action='{{ url('barangmasuk') }}' method='get'> 
 @csrf
 <!--@ method('PUT')-->
-    <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <a href='{{ url('barangmasuk') }}'class="btn btn-primary btn-sm"> kembali </a>
-        </div>
         <div class="my-3 p-3 bg-body rounded shadow-sm">
+            <h5 class="text-primary" align="center"><b>Barang Masuk</b></h5>
             <div class="mb-3 row">
                 <label for="Tanggal" class="col-sm-2 col-form-label datepicker">Tanggal Awal</label>
                 <div class="col-sm-4">
@@ -68,22 +66,28 @@
                 @enderror
             </div>
         </div>
-        @if(Auth::user()->role =='pengelola_barang')
-        <div class="col-sm-4">
+        
+        <div class="mb-3 row">
+            <label for="nama_barang" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+            @if(Auth::user()->role =='pengelola_barang')
+
             <a href="" onclick="this.href='/unduh-preview/'+document.getElementById('tglawal').value
                     +'/'+document.getElementById('tglakhir').value+'/'+document.getElementById('kode').value
                     +(document.getElementById('perangkat_daerah') ? '/' + document.getElementById('perangkat_daerah').value : '')"
                 class="btn btn-primary btn-sm">Unduh PDF</a>
-        </div>
-        @endif
-        @if(Auth::user()->role =='kelurahan')
-        <div class="col-sm-4">
-            <a href="" onclick="this.href='/view-unduh/'+document.getElementById('tglawal').value
-                    +'/'+document.getElementById('tglakhir').value+'/'+document.getElementById('kode').value"
-                class="btn btn-primary btn-sm">Unduh PDF</a>
-        </div>
-        @endif
         
+            @endif
+            @if(Auth::user()->role =='kelurahan')
+            
+                <a href="" onclick="this.href='/view-unduh/'+document.getElementById('tglawal').value
+                        +'/'+document.getElementById('tglakhir').value+'/'+document.getElementById('kode').value"
+                    class="btn btn-primary btn-sm">Unduh PDF</a>
+            
+            @endif
+            <a href='{{ url('barangmasuk') }}'class="btn btn-primary btn-sm"> kembali </a>
+            </div>
+        </div>
       
     </div>
 </form>

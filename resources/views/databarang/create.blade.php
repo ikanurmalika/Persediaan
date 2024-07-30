@@ -7,7 +7,7 @@
 @csrf
     <div class="my-3 p-3 bg-body rounded shadow-sm">
         <div class="pb-3">
-        <a href='{{ url('databarang') }}'class="btn btn-primary ">kembali</a>
+        <h5 class="text-primary" align="center"><b>Tambah Data Barang</b></h5>
         </div>
         <div class="mb-3 row">
             <label for="jenis_barang" class="col-sm-2 col-form-label">Jenis Barang</label>
@@ -45,7 +45,10 @@
         </div>
         <div class="mb-3 row">
             <label for="jurusan" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">Simpan</button></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                <a href='{{ url('databarang') }}'class="btn btn-primary ">kembali</a>
+            </div>
         </div>
       
     </div>

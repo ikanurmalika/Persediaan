@@ -6,8 +6,7 @@
 <form action='{{ url('barangmasuk') }}' method='post'> 
 @csrf
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <a href='{{ url('barangmasuk') }}'class="btn btn-primary ">kembali</a>
-        <p></p>
+        <h5 align="center" class="text-primary"><b>Tambah Data Barang Masuk</b> </h5>
         <div class="row mb-3">
             <div class="col-md-2">
                 <label for="Tanggal">Tanggal</label>
@@ -184,6 +183,7 @@
             <label for="nama_barang" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
                 <button type="submit" class="btn btn-primary" name="submit"> <i class="fas fa-save"></i> Simpan </button>
+                <a href='{{ url('barangmasuk') }}'class="btn btn-primary ">kembali</a>
             </div>
         </div>
       

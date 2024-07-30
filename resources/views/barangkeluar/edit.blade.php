@@ -8,7 +8,7 @@
 @csrf
 @method('PUT')
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <a href='{{ url('barangkeluar') }}'class="btn btn-primary"> kembali </a>
+        <h5 class="text-primary" align="center"><b>Edit Data Barang Keluar</b></h5>
         <div class="mb-3 row">
             <label for="Tanggal" class="col-sm-2 col-form-label datepicker">Tanggal</label>
             <div class="col-sm-2">
@@ -126,7 +126,10 @@
         </div>
         <div class="mb-3 row">
             <label for="nama_barang" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">Simpan</button></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                <a href='{{ url('barangkeluar') }}'class="btn btn-primary">kembali</a>
+            </div>
         </div>
       
     </div>

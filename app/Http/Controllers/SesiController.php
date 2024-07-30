@@ -153,4 +153,29 @@ class SesiController extends Controller
 
         return redirect('pengguna')->with('success', 'Data pengguna berhasil dihapus.');
     }
+
+    public function LupaPassword()
+    {
+        return view('pengguna.Lupapassword');
+    }
+
+    // Function to handle forgot password logic (simplified for demonstration purposes)
+    /*public function GantiPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+        ], [
+            'email.required' => 'Email wajib diisi',
+            'email.email' => 'Silahkan masukkan Email yang valid',
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+        if ($user) {
+            // Implement logic to send a password reset link to the user
+            return redirect()->back()->with('success', 'Link reset password telah dikirim ke email Anda');
+        } else {
+            return redirect()->back()->withErrors('Email tidak ditemukan');
+        }
+    }*/
+   
 }

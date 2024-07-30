@@ -74,6 +74,11 @@
                                         </ul>
                                     </div>
                                     @endif
+                                    @if (session('success'))
+                                        <div>
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                                     <form class="user" action="" method="post">
                                         {{ csrf_field() }}
 
@@ -81,25 +86,13 @@
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" value="{{ old('email') }}" name="email" placeholder="isi email" class="form-control form-control-user ">
                                         </div>
-                                        <div class="form-group">
-                                            <label for="password" class="form-label">Password</label>
-                                            <input type="password" name="password" placeholder="isi password" class="form-control form-control-user">
-                                        </div>
                                         <div class="mb-3 d-grid " style="text-align: center; ">
-                                            <button name="submit" type="submit"  class="btn btn-primary btn-user btn-block">Login</button>
+                                            <button name="submit" type="submit"  class="btn btn-primary btn-user btn-block">Kirim Link Reset Password</button>
                                         </div>
-                                        
+                                        <a href='{{ route('login') }}' > Kembali ke Login</a>
                                     </form>
-                                    <!--
-                                    <form class="user">
-                                        <div  class="mb-3 d-grid " style="text-align: center ">
-                                            Lupa Password?
-                                            <a href='' > Klik disini</a>
-                                        </div>
-                                        </form>
-                                    -->
                                     
-                                
+                                    <hr>
                                     
                                 </div>
                             </div>

@@ -42,6 +42,9 @@ use App\Models\barangmasuk;
 Route::middleware(['guest'])->group(function(){
     Route::get('/',[SesiController::class,'index'])->name('login');
     Route::post('/',[SesiController::class,'login']);
+    
+    //Route::get('lupa-password', [SesiController::class, 'LupaPassword'])->name('LupaPassword');
+    //Route::post('lupa-password', [SesiController::class, 'GantiPassword'])->name('GantiPassword');
 });
 Route::get('/home',function(){
     return redirect('/dashboard');

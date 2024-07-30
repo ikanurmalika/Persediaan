@@ -72,17 +72,21 @@
         </div>
     </div>
 -->
-    <div class="col-sm-4">
-        @if(Auth::user()->role =='pengelola_barang')
-        <a href="" onclick="this.href='/LihatBukubarang/'+document.getElementById('tglawal').value
-                +'/'+document.getElementById('tglakhir').value+(document.getElementById('perangkat_daerah') ? '/' + document.getElementById('perangkat_daerah').value : '')"
-            class="btn btn-primary btn-sm">Lihat Data</a>
-        @endif
-        @if(Auth::user()->role =='kelurahan')
-        <a href="" onclick="this.href='/BukuBarang-show/'+document.getElementById('tglawal').value
-        +'/'+document.getElementById('tglakhir').value"class="btn btn-primary btn-sm">Lihat Data</a>
-        @endif
+<div class="mb-3 row">
+    <label for="nama_barang" class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-10">
+                @if(Auth::user()->role =='pengelola_barang')
+<a href="" onclick="this.href='/LihatBukubarang/'+document.getElementById('tglawal').value
+        +'/'+document.getElementById('tglakhir').value+(document.getElementById('perangkat_daerah') ? '/' + document.getElementById('perangkat_daerah').value : '')"
+    class="btn btn-primary btn-sm">Lihat Data</a>
+@endif
+@if(Auth::user()->role =='kelurahan')
+<a href="" onclick="this.href='/BukuBarang-show/'+document.getElementById('tglawal').value
++'/'+document.getElementById('tglakhir').value"class="btn btn-primary btn-sm">Lihat Data</a>
+@endif    
     </div>
+</div>
+
 
 
     </div>

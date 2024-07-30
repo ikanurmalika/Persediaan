@@ -181,10 +181,6 @@ public function show($tglawal, $tglakhir, $perangkat_daerah = null)
         $groupedData = $data->groupBy('perangkat_daerah');
         $groupedData2 = $data2->groupBy('perangkat_daerah');
     }
-    $perangkat_daerah = '-';
-    if ($data->isNotEmpty()) {
-        $perangkat_daerah = $data->first()->perangkat_daerah;
-    }
     $ttd_surat = ttd_surat::where(function ($query) use ($perangkat_daerah) {
         if ($perangkat_daerah == 'SE-KECAMATAN') {
             $query->where('unit_kerja', 'KECAMATAN ASTANAANYAR');
@@ -207,7 +203,7 @@ public function show($tglawal, $tglakhir, $perangkat_daerah = null)
 public function unduhForm($tglawal, $tglakhir,$perangkat_daerah = null)
 {
     // Panggil fungsi PreviewUnduh untuk mendapatkan data yang sama
-    $previewData = $this->show($tglawal, $tglakhir,$perangkat_daerah = null);
+    $previewData = $this->show($tglawal, $tglakhir,$perangkat_daerah );
 
     // Ekstrak data dari hasil preview
     $tanggal=$previewData->getData()['tanggal'];

@@ -8,7 +8,7 @@
 @csrf
 @method('PUT')
     <div class="my-3 p-3 bg-body rounded shadow-sm">
-        <a href='{{ url('pengguna') }}'class="btn btn-primary"> kembali </a>
+        <h5 class="text-primary" align="center"><b>Edit Data Pengguna</b></h5>
         <div class="mb-3 row">
             <label for="name" class="col-sm-2 col-form-label">Nama</label>
             <div class="col-sm-10">
@@ -59,7 +59,7 @@
                  @enderror
             </div>
         </div>
-        <p>( Role: 1.pengelola_barang; 2.ketua; 3.kelurahan; 4.pengguna )</p>
+        <p>( Role: 1.pengelola_barang; 2.kelurahan; 3.pengguna )</p>
         <div class="mb-3 row">
             <label for="role" class="col-sm-2 col-form-label">Role</label>
             <div class="col-sm-10">
@@ -72,7 +72,10 @@
         </div>
         <div class="mb-3 row">
             <label for="nip" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10"><button type="submit" class="btn btn-primary" name="submit">Simpan</button></div>
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
+                <a href='{{ url('pengguna') }}'class="btn btn-primary"> kembali </a>
+            </div>
         </div>
       
     </div>
